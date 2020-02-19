@@ -27,7 +27,7 @@ namespace DotnetIteration
    */
     public static IEnumerable<string> Yelling(List<string> words)
     {
-      throw new System.NotImplementedException();
+      return words.Select(word => word.ToUpper());
     }
 
     /* 
@@ -38,8 +38,9 @@ namespace DotnetIteration
 
     public static IEnumerable<int> Double(List<int> numbers)
     {
-      throw new System.NotImplementedException();
+      return numbers.Select(number => number * 2);
     }
+
     /*
       * 3) Define a function stringyIndexes() that takes an list of
       * strings as an argument and returns a new list with each string
@@ -47,7 +48,7 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> StringyIndexes(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Select((data, index) => $"{data} is at index {index}");
     }
     /*
        * 4) Define a function onlyTheEvenSurvive that accepts an list of
@@ -56,7 +57,7 @@ namespace DotnetIteration
 
     public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.Where(datum => datum % 2 == 0);
     }
     /*
         * 5) Define a function onlyTheEvenIndexedSurvive that accepts an list of
@@ -64,7 +65,7 @@ namespace DotnetIteration
         */
     public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.Where((data, index) => index % 2 == 0);
     }
     /*
       * 6)  Define a function bestMoviesOfTheYear that accepts an list of
@@ -81,43 +82,43 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
     {
-      throw new System.NotImplementedException();
+      return data.Where(movie => movie.Score >= 91 && movie.Year == year).Select(movie => $"{movie.Name}");
     }
 
     /*
-      * 7) Define a function everyoneIsOdd that accepts an list of
+      * 7) Define a function everyoneIsOdd that accepts a list of
       * numbers and returns true if every element of the list is
       * odd.
       */
 
     public static bool EveryoneIsOdd(List<int> data)
     {
-      throw new System.NotImplementedException();
+      return data.All(datum => datum % 2 == 1);
     }
     /*
-      * 8) Define a function findTheNeedle that accepts an list of
+      * 8) Define a function findTheNeedle that accepts a list of
       * strings and returns the one string that contains the word
       * `needle` 
       */
     public static string FindTheNeedle(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Single(datum => datum.Contains("needle"));
     }
 
 
     /*
-        * 9) Define a function findTheNeedleIndex that accepts an list of
+        * 9) Define a function findTheNeedleIndex that accepts a list of
         * strings and returns the index of the string that contains
         *  the word `needle` inside
         */
 
     public static int FindTheNeedleIndex(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.IndexOf(data.Single(datum => datum.Contains("needle")));
     }
 
     /*
-      *` 10)  Define a function someoneToLove that accepts an list of
+      *` 10)  Define a function someoneToLove that accepts a list of
       * strings and returns true if at least one string is exactly
       * four characters long
       */
@@ -125,7 +126,7 @@ namespace DotnetIteration
 
     public static bool SomeoneToLove(List<string> data)
     {
-      throw new System.NotImplementedException();
+      return data.Any(characters => characters.Length == 4);
     }
   }
 
